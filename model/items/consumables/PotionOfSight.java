@@ -9,8 +9,8 @@ package model.consumables;
 
 import model.items.consumables.Consumable;
 
-public class PoitionOfSight extends Consumable {
-  public PoitionOfSight(){
+public class PotionOfSight extends Consumable {
+  public PotionOfSight(){
     super("Potion Of Sight", Consumable.SIZE_SMALL, 1, 2);
   }
 }
