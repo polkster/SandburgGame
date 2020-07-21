@@ -12,6 +12,6 @@ public class Horse extends Creature {
 
   // String name, Integer level, Integer hitDice, Integer minAttackValue, Integer maxAttackValue
   public Horse(){
-    super("Horse", 1, 4, 2, 4);
+    super("Horse", 1, 4, 4, 8);
   }
 }

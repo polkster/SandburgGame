@@ -3,6 +3,8 @@ package model.items.weapons;
 import model.items.Item;
 
 public class Weapon extends Item {
+
+  private boolean allowsBlock;
   
   private Integer minDamage;
   private Integer maxDamage;
@@ -29,4 +31,13 @@ public class Weapon extends Item {
   public Integer getMaxDamage(){
     return this.maxDamage;
   }
+
+  public boolean allowsBlock(){
+    return this.allowsBlock;
+  }
+
+  public void setAllowsBlock( boolean allowsBlock ){
+    this.allowsBlock = allowsBlock;
+  }
 }
+
