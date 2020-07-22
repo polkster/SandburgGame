@@ -5,7 +5,7 @@
 * bow or other distacne weopons
 *efectiveness range declares how many sqares around you you can se into
 */
-package model.consumables;
+package model.items.consumables;
 
 import model.items.consumables.Consumable;
 

@@ -1,6 +1,6 @@
 /* This item allows you to escape if fighting a Siren or creature that prevents you from escape
 */
-package model.consumables;
+package model.items.consumables;
 
 import model.items.consumables.Consumable;
 

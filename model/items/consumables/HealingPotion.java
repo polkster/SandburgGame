@@ -1,4 +1,4 @@
-package model.consumables;
+package model.items.consumables;
 
 import model.items.consumables.Consumable;
 

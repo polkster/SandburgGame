@@ -1,6 +1,6 @@
-package model.items.Currency;
+package model.items.currency;
 
-import model.items.Currency.Money;
+import model.items.currency.Money;
 
 public class SackOfJewls extends Money {
 

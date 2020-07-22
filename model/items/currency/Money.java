@@ -1,4 +1,4 @@
-package model.items.Currency;
+package model.items.currency;
 
 import model.items.Item;
 
