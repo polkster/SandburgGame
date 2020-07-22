@@ -6,5 +6,7 @@ public class ShortAxe extends Weapon {
 
   public ShortAxe(){
     super( "Short Axe", Weapon.SIZE_SMALL, 2, 5 );
+
+    setAllowsBlock( false );
   }
 }

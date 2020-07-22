@@ -6,5 +6,7 @@ public class SmallMace extends Weapon{
   
   public SmallMace(){
     super( "Small Mace", Weapon.SIZE_MEDIUM, 1, 8 );
+
+    setAllowsBlock( false );
   }
 }
