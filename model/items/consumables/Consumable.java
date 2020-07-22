@@ -4,30 +4,19 @@ import model.items.Item;
 
 public class Consumable extends Item {
   
-  private Integer minEffectiveness;
-  private Integer maxEffectiveness;
-
-  public Consumable( String name, Integer size, Integer minEffectiveness, Integer maxEffectiveness ){
+    private Integer Efectiveness;
+ 
+    public Consumable( String name, Integer size, Integer Efectiveness){
     
     super( name, size );
-
-    this.minEffectiveness = minEffectiveness;
-    this.maxEffectiveness = maxEffectiveness;
+    this.Efectiveness = Efectiveness;  
   }
 
-  public void setMinEffectiveness( Integer minEffectiveness ){
-    this.minEffectiveness = minEffectiveness;
+  public void setEfectiveness( Integer Efectiveness ){
+    this.Efectiveness = Efectiveness;
   }
 
-  public Integer getMinEffectiveness(){
-    return this.minEffectiveness;
-  }
-
-  public void setMaxEffectivenessDamage( Integer maxEffectiveness ){
-    this.maxEffectiveness = maxEffectiveness;
-  }
-
-  public Integer getMaxEffectiveness(){
-    return this.maxEffectiveness;
+  public Integer getEfectiveness(){
+    return this.Efectiveness;
   }
 }

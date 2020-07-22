@@ -6,6 +6,8 @@ public class Creature {
 
   private boolean allowsEscape;
 
+  private boolean Earplugs;
+
   // parameters
   private String name;
   private Integer level;

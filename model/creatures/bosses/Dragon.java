@@ -1,4 +1,6 @@
-package model.creatures;
+package model.Creatures.bosses;
+
+import model.creatures.Creature;
 
 public class Dragon extends Creature {
 

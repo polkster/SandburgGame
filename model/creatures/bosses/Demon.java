@@ -1,4 +1,4 @@
-package model.creatures;
+package model.creatures.bosses;
 
 import model.creatures.Creature;
 
