@@ -1,8 +1,8 @@
 package model.creatures.magical;
 
-import model.creatures.Creature
+import model.creatures.Creature;
 
-public class Witch extends Creature
+public class Witch extends Creature {
 
 /*
   * This is a Witch
@@ -14,7 +14,6 @@ public class Witch extends Creature
 
   // String name, Integer level, Integer hitDice, Integer minAttackValue, Integer maxAttackValue
   public Witch(){
-    super("Witch", 4, 6, 8, 10);
-
-     
+    super("Witch", 4, 6, 10, 15);    
   }
+}

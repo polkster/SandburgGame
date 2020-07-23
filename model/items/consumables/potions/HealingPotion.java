@@ -4,6 +4,6 @@ import model.items.consumables.Consumable;
 
 public class HealingPotion extends Consumable {
   public HealingPotion(){
-    super("Potion Of Healing", Consumable.SIZE_SMALL, 15);
+    super("Potion Of Healing", Consumable.SIZE_SMALL, 15, Consumable.EFFECT_TYPE_HEALING);
   }
 }//johnny

@@ -14,7 +14,7 @@ public class Siren extends Creature {
 
   // String name, Integer level, Integer hitDice, Integer minAttackValue, Integer maxAttackValue
   public Siren(){
-    super("Siren", 6, 8, 12, 16);
+    super("Siren", 6, 8, 20, 30);
 
     setAllowsEscape( false );
   }

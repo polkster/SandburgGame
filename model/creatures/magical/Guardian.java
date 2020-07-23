@@ -10,8 +10,8 @@ public class Guardian extends Creature {
   public static final Integer GUARDIAN_ATTACK_STOMP = 4;
 
   private static final Integer GUARDIAN_HITDICE = 12;
-  private static final Integer GUARDIAN_MIN_DAMAGE = 3;
-  private static final Integer GUARDIAN_MAX_DAMAGE = 18;
+  private static final Integer GUARDIAN_MIN_DAMAGE = 10;
+  private static final Integer GUARDIAN_MAX_DAMAGE = 20;
   
   private Integer GuardianAttackType;
       

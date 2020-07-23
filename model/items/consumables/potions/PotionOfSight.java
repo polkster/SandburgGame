@@ -11,6 +11,6 @@ import model.items.consumables.Consumable;
 
 public class PotionOfSight extends Consumable {
   public PotionOfSight(){
-    super("Potion Of Sight", Consumable.SIZE_SMALL, 2);
+    super("Potion Of Sight", Consumable.SIZE_SMALL, 2, Consumable.EFFECT_TYPE_REVEAL);
   }
 }//johnny

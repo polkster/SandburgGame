@@ -4,11 +4,21 @@ import java.util.Random;
 
 public class Creature {
 
+  // determines if a player can escape from this mob
   private boolean allowsEscape;
 
+  //determines if a player is turned to stone (aka petrified)
+  private boolean turnedToStone;
+
+  // determines if this creature has a special attack of some sort
   private boolean special;
 
-  private boolean Earplugs;
+  // determines if the creature "wanders" through the dungeon or level
+  private boolean wanderer;
+
+  // this is a variable that gets set and then unset during every combat
+  // -1 indicates that the initiative roll has not been made for the action
+  private Integer initiative  = -1; 
 
   // parameters
   private String name;
@@ -35,6 +45,7 @@ public class Creature {
     this.maxAttackValue = maxAttackValue;
     this.allowsEscape = true;
     this.special = false;
+    this.wanderer = false;
     
     // this will determine the creatures hit points upon instantiation
     calculateHitPoints();
@@ -122,4 +133,21 @@ public class Creature {
   public void setSpecial(boolean special){
     this.special = special;
   }
+
+  public Integer getInitiative(){
+    return this.initiative;
+  }
+
+  public void setInitiative( Integer value ){
+    this.initiative = value;
+  }
+  
+  public void setWanderer( boolean wanderer ){
+    this.wanderer = wanderer;
+  }
+
+  public boolean isWanderer(){
+    return this.wanderer;
+  }
 }
+
