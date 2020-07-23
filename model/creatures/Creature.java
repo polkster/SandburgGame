@@ -6,6 +6,8 @@ public class Creature {
 
   private boolean allowsEscape;
 
+  private boolean special;
+
   private boolean Earplugs;
 
   // parameters
@@ -32,6 +34,7 @@ public class Creature {
     this.minAttackValue = minAttackValue;
     this.maxAttackValue = maxAttackValue;
     this.allowsEscape = true;
+    this.special = false;
     
     // this will determine the creatures hit points upon instantiation
     calculateHitPoints();
@@ -110,5 +113,13 @@ public class Creature {
 
   public void setAllowsEscape( boolean allowsEscape ){
     this.allowsEscape = allowsEscape;
+  }
+
+  public boolean isSpecial(){
+    return this.special;
+  }
+
+  public void setSpecial(boolean special){
+    this.special = special;
   }
 }

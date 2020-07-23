@@ -9,4 +9,4 @@ public class Staff extends Weapon {
     
     setAllowsBlock( true );
   } 
-}
+}//johnny

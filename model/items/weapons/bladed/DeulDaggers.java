@@ -9,4 +9,4 @@ public class DeulDaggers extends Weapon {
 
     setAllowsBlock( false );
   }
-}
+}//johnny

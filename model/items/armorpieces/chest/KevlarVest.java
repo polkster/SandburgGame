@@ -7,4 +7,4 @@ public class KevlarVest extends Armor {
   public KevlarVest(){
     super( "Kevlar Vest", Armor.SIZE_MEDIUM, 5 );
   }
-}
+}//johnny

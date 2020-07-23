@@ -7,4 +7,4 @@ public class SteelToedBoots extends Armor {
   public SteelToedBoots(){
     super( "Steel Toed Boots", Armor.SIZE_MEDIUM, 2 );
   }
-}
+}//johnny

@@ -9,4 +9,4 @@ public class SmallKnife extends Weapon {
 
     setAllowsBlock( false );
   }
-}
+}//johnny

@@ -9,4 +9,4 @@ public class Broadsword extends Weapon {
 
     setAllowsBlock( true );
   }
-}
+}//johnny

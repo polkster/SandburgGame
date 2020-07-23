@@ -7,4 +7,4 @@ public class BigShoes extends Armor {
   public BigShoes(){
     super( "Big Shoes", Armor.SIZE_SMALL, 1 );
   }
-}
+}//johnny

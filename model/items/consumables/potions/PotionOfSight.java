@@ -13,4 +13,4 @@ public class PotionOfSight extends Consumable {
   public PotionOfSight(){
     super("Potion Of Sight", Consumable.SIZE_SMALL, 2);
   }
-}
+}//johnny

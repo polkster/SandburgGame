@@ -19,6 +19,8 @@ public class Dragon extends Creature {
       super(name, level, DRAGON_HITDICE, DRAGON_MIN_DAMAGE, DRAGON_MAX_DAMAGE);
       
       this.dragonBreathType = dragonBreathType;
+
+      setSpecial(true);
   }
   
   public Integer getDragonBreathType(){

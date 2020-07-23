@@ -19,4 +19,4 @@ public class Armor extends Item {
   public Integer getProtection(){
     return this.protection;
   }
-}
+}//johnny

@@ -7,4 +7,4 @@ public class StealChestplate extends Armor {
   public StealChestplate(){
     super( "Steal Chestplate", Armor.SIZE_XL, 4 );
   }
-}
+}//johnny

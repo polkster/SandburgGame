@@ -19,9 +19,11 @@ public class Guardian extends Creature {
       super(name, level, GUARDIAN_HITDICE, GUARDIAN_MIN_DAMAGE, GUARDIAN_MAX_DAMAGE);
       
       this.GuardianAttackType = GuardianAttackType;
+
+      setSpecial(true);
   }
   
   public Integer getGuarndianAttackType(){
     return this.GuardianAttackType;
-  }
+  }//johnny
 }

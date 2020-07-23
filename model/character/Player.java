@@ -12,6 +12,7 @@ import model.items.Item;
 import model.items.weapons.Weapon;
 import model.items.armorpieces.Armor;
 
+// Copyright 2020 - Jason Polk
 public class Player extends Creature {
 
   private Armor chest = null;
@@ -25,13 +26,14 @@ public class Player extends Creature {
   private Weapon primary = null;
   private Weapon secondary = null;
 
+  private Integer copperPieces = 0; 
+  private Integer silverPieces = 0; // 10 copper pieces = 1 silver piece
+  private Integer goldPieces = 0;   // 10 silver pieces = 1 gold piece
+
   public static final Integer ARMOR_SLOT_CHEST = 1;
   public static final Integer ARMOR_SLOT_LEG = 2;
   public static final Integer ARMOR_SLOT_FEET = 3;
   public static final Integer ARMOR_SLOT_HEAD = 4;
-
-  public static final Integer ITEM_SLOT_PRIMARY = 1;
-  public static final Integer ITEM_SLOT_SECONDARY = 2;
 
   public Player( String name, Integer level, Integer hitDice ){
       super( name, level, hitDice, -1, -1 );

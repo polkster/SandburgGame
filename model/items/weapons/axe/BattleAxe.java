@@ -9,4 +9,4 @@ public class BattleAxe extends Weapon {
     
     setAllowsBlock( false );
   } 
-}
+}//johnny
