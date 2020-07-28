@@ -23,6 +23,7 @@ public class PlayerConsole {
 
     public void outputPlayer(Player player){
 
+        outputStats( player );
         outputWeapons( player );
         outputArmor( player );
         outputPlayerInventory( player );
@@ -30,6 +31,10 @@ public class PlayerConsole {
 
     public void outputLocation(Location location){
         // TODO: implement locations
+    }
+
+    public void outputStats( Player player ){
+      this.out.println( player.getName() + " currently has " + player.getCurrentHitPoints() + " out of " + player.getMaxHitPoints() + " total hitpoints.");
     }
 
     public void outputCreature(Creature creature){
@@ -40,10 +45,10 @@ public class PlayerConsole {
     }
 
     public void outputPlayerInventory(Player player){
-        this.out.println("Character: " + player.getName());
 
-        this.out.println( "\tInventory");
-        this.out.println( "\t------------------------");
+        this.out.println();
+        this.out.println( "\t" + player.getName() + "'s Inventory");
+        this.out.println( "\t--------------------------------------------");
 
         if ( player.getStorage() == null || player.getStorage().getItems().size() == 0 ) {
             this.out.println("\tNo Items In Backpack");
@@ -72,19 +77,19 @@ public class PlayerConsole {
         this.out.print(player.getName() + " is weilding ");
 
         if ( player.getPrimaryWeapon() == null ){
-            this.out.println( "nothing in their primary hand");
+            this.out.print( "nothing in their primary hand");
         }
         else{
-            this.out.println( "a " + player.getPrimaryWeapon().getName() + " in their primary hand");
+            this.out.print( "a " + player.getPrimaryWeapon().getName() + " in their primary hand");
         }
 
         this.out.print( " and " );
 
         if ( player.getSecondaryWeapon() == null ){
-            this.out.println( "nothing in their secondary hand" );
+            this.out.println( "nothing in their secondary hand." );
         }
         else{
-            this.out.println( "a " + player.getSecondaryWeapon().getName() + " in their secondary hand" );
+            this.out.println( "a " + player.getSecondaryWeapon().getName() + " in their secondary hand." );
         }
     }
 

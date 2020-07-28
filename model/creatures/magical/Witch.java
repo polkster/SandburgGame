@@ -14,6 +14,6 @@ public class Witch extends Creature {
 
   // String name, Integer level, Integer hitDice, Integer minAttackValue, Integer maxAttackValue
   public Witch(){
-    super("Witch", 4, 6, 10, 15);    
+    super("Witch", 4, 4, 10, 15);    
   }
 }

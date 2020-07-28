@@ -29,6 +29,7 @@ public class Creature {
   
   // calculated values
   private Integer hitPoints = 0;
+  private Integer currentHitPoints = 0;
   
   /*
   * @param 	name			The name of the creature (can be non unique)
@@ -67,6 +68,7 @@ public class Creature {
       
       // this is the abbreviation of this.hitPoints = this.hitPoints + val;
       this.hitPoints += val;
+      this.currentHitPoints = this.hitPoints;
     }
   }
   
@@ -95,9 +97,13 @@ public class Creature {
   }
   
   public Integer getCurrentHitPoints(){
-    return this.hitPoints;
+    return this.currentHitPoints;
   }
   
+  public Integer getMaxHitPoints(){
+    return this.hitPoints;
+  }
+
   public void setCurrentHitpoints( Integer hitPoints ){
     this.hitPoints = hitPoints;
   }

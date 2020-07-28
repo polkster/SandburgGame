@@ -119,8 +119,16 @@ public class Player extends Creature {
     return this.storage;
   }
 
+  public void setStorage( Container container ){
+    this.storage = container;
+  }
+
   public Container getMisc(){
     return this.misc;
+  }
+
+  public void setMisc( Container container ){
+    this.misc = container;
   }
 
   public Weapon getPrimaryWeapon(){
