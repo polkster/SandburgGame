@@ -15,5 +15,7 @@ public class Medusa extends Creature {
   // String name, Integer level, Integer hitDice, Integer minAttackValue, Integer maxAttackValue
   public Medusa(){
     super("Medusa", 6, 8, 15, 15);
+
+    setTurnedToStone (true);
   }
-}
+}//Johnny

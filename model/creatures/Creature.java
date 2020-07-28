@@ -126,6 +126,14 @@ public class Creature {
     this.allowsEscape = allowsEscape;
   }
 
+  public boolean turnedToStone(){
+    return this.turnedToStone;
+  }
+
+  public void setTurnedToStone( boolean turnedToStone){
+    this.turnedToStone = turnedToStone;
+  }
+
   public boolean isSpecial(){
     return this.special;
   }

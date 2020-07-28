@@ -15,5 +15,6 @@ public class EarthWormSally extends Creature {
   // String name, Integer level, Integer hitDice, Integer minAttackValue, Integer maxAttackValue
   public EarthWormSally(){
     super("Earth Worm Sally", 1, 6, 1, 4);
+    //EARTHWORM SALLY SPREADING DESASES FROM FLROIDA TO CALI
   }
 }
