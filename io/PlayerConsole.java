@@ -74,7 +74,7 @@ public class PlayerConsole {
     private void outputWeapons( Player player ){
 
         this.out.println(); // adding some whitespace
-        this.out.print(player.getName() + " is weilding ");
+        this.out.print(player.getName() + " is wielding ");
 
         if ( player.getPrimaryWeapon() == null ){
             this.out.print( "nothing in their primary hand");
