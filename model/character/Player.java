@@ -115,6 +115,14 @@ public class Player extends Creature {
     return slots;
   }
 
+  public Container getStorage(){
+    return this.storage;
+  }
+
+  public Container getMisc(){
+    return this.misc;
+  }
+
   public Weapon getPrimaryWeapon(){
     return this.primary;
   }
