@@ -17,7 +17,7 @@ public class PlayerConsole {
         this.out = stream;
         this.in = in;
 
-        this.out.println( "Console initialized...");
+        this.out.println( "Toilet initialized...");
         this.out.println();
     }
 

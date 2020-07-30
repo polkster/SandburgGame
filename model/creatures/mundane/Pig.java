@@ -14,6 +14,6 @@ public class Pig extends Creature {
 
   // String name, Integer level, Integer hitDice, Integer minAttackValue, Integer maxAttackValue
   public Pig(){
-    super("Pig", 1, 2, 1, 2);
+    super("Pig", 1,6,1,4);
   }
 }
