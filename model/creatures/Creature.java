@@ -105,7 +105,7 @@ public class Creature {
   }
 
   public void setCurrentHitpoints( Integer hitPoints ){
-    this.hitPoints = hitPoints;
+    this.currentHitPoints = hitPoints;
   }
   
   public Integer getMinimumAttackValue(){

@@ -19,6 +19,7 @@ public class Player extends Creature {
   private Armor leg = null;
   private Armor feet = null;
   private Armor head = null;
+  private Armor eye = null;
 
   private Container storage = null;
   private Container misc = new Pockets();
@@ -34,6 +35,7 @@ public class Player extends Creature {
   public static final Integer ARMOR_SLOT_LEG = 2;
   public static final Integer ARMOR_SLOT_FEET = 3;
   public static final Integer ARMOR_SLOT_HEAD = 4;
+  public static final Integer ARMOR_SLOT_EYE = 5;
 
   public Player( String name, Integer level, Integer hitDice ){
       super( name, level, hitDice, -1, -1 );
@@ -52,6 +54,9 @@ public class Player extends Creature {
     else if ( slot == ARMOR_SLOT_HEAD ){
       this.head = piece;
     }
+    else if ( slot == ARMOR_SLOT_EYE ){
+      this.eye = piece;
+    }
     else{
       System.out.println("TRIED TO EQUIP ARMOR IN THE WRONG SLOT!");
     }
@@ -69,6 +74,9 @@ public class Player extends Creature {
     }
     else if ( slot == ARMOR_SLOT_HEAD ){
       return this.head;
+    }
+    else if ( slot == ARMOR_SLOT_EYE ){
+      return this.eye;
     }
     else{
       System.out.println("TRIED TO EQUIP ARMOR IN THE WRONG SLOT!");
@@ -95,6 +103,10 @@ public class Player extends Creature {
 
     if ( this.feet != null ){
       value += this.feet.getProtection();
+    }
+
+    if ( this.eye != null ){
+      value += this.eye.getProtection();
     }
 
     return value;

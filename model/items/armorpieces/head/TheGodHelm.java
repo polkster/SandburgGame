@@ -5,6 +5,6 @@ import model.items.armorpieces.Armor;
 public class TheGodHelm extends Armor {
 
   public TheGodHelm(){
-    super( "The God Helm", Armor.SIZE_MEDIUM, 10000 );
+    super( "The God Helm", Armor.SIZE_MEDIUM, 100 );
   }
 }

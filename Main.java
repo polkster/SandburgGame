@@ -1,3 +1,9 @@
+import java.util.List;
+
+import gameplay.combat.Combat;
+
+import java.util.ArrayList;
+
 import io.PlayerConsole;
 import model.character.Player;
 import model.items.consumables.potions.HealingPotion;
@@ -14,10 +20,12 @@ import model.items.currency.GoldBar;
 import model.items.consumables.potions.PotionOfSight;
 import model.items.currency.GoldCoin;
 import model.items.consumables.misc.Earplugs;
-
 import model.containers.packs.Backpack;
+import model.containers.packs.BackPackingPack;
+import model.containers.Wagons.OxDrawnWagon;
 import model.containers.Container;
 import model.containers.small.Pockets;
+import model.items.consumables.oneuseweapons.ToasterFullOBoom;
 
 
 // armor imports
@@ -28,12 +36,19 @@ import model.items.armorpieces.feet.Crocs;
 import model.items.armorpieces.legs.KevlarPants; 
 import model.items.armorpieces.head.ThickBeanie;
 import model.items.armorpieces.head.TheGodHelm;
-
+import model.items.armorpieces.eyes.Sunglasses;
 // navin's imports
 import model.items.armorpieces.chest.SteelChestPlate;
 import model.items.armorpieces.legs.SteelLeggings;
 import model.items.armorpieces.feet.SteelBoots;
 import model.items.armorpieces.head.SteelHelmet;
+import model.items.armorpieces.eyes.SteelGlasses;
+
+// bad guy imports
+import model.creatures.Creature;
+import model.creatures.magical.Ogre;
+import model.creatures.magical.Siren;
+import model.creatures.bosses.Demon;
 
 
 public class Main {
@@ -41,15 +56,15 @@ public class Main {
 
     PlayerConsole console = new PlayerConsole(System.out, System.in);
 
-    runJasonsTest(console);
+    runCombat(console);
     
     // student calls here
     //runShivsTest(console);
     //runJakubtest(console);
-    runNavinTest(console);
+    //runNavinTest(console);
     //runWaleedsTest(console);
-    runJohnnyTest(console);
-    runAngelinaTest(console);
+    //runJohnnyTest(console);
+    //runAngelinaTest(console);
     //runBreannaTest(console);
     //runSydneyTest(console);
   }
@@ -75,14 +90,19 @@ public class Main {
     console.outputPlayer(player);
   }
 
-  private static void runSydneyTest(PlayerConsole console){
+  private static Player loadSydney(PlayerConsole console){
     Player player = new Player("Sydney",1,2);
 
+    ShortSword sword = new ShortSword();
+    player.setPrimaryWeapon(sword);
+
     console.outputPlayer(player);
+
+    return player;
   }
 
-  private static void runJohnnyTest(PlayerConsole console){
-    Player player = new Player("Bob the face flop",3,5);
+  private static Player loadJohnny(PlayerConsole console){
+    Player player = new Player("Bob the face flop",10,5);
 
     Broadsword bladed = new Broadsword();
     player.setPrimaryWeapon( bladed );
@@ -90,37 +110,41 @@ public class Main {
     GoldBar moola = new GoldBar();
     TheGodHelm Mewin = new TheGodHelm();
     Crocs Melose = new Crocs();
+    ToasterFullOBoom BOOM = new ToasterFullOBoom();
 
-    Backpack bp = new Backpack();
+    OxDrawnWagon wn = new OxDrawnWagon();
 
-    player.setStorage(bp);
+    player.setStorage(wn);
        
     player.setArmor( Player.ARMOR_SLOT_HEAD, Mewin );
     player.setArmor( Player.ARMOR_SLOT_FEET, Melose);
     
     player.getStorage().addItemToContainer( currency );
     player.getStorage().addItemToContainer( moola );
+    player.getMisc().addItemToContainer( BOOM );
+    player.setPrimaryWeapon( bladed );
 
- 
+    console.outputPlayer(player); 
 
-    console.outputPlayer(player);
-    
+    return player;
   }
 
   private static void runAngelinaTest(PlayerConsole console){
-    Player player = new Player("Angelina", 7, 9);
+    Player player = new Player("Angelina", 7, 11);
     
     //instantiate armor
     ThickSweater chest = new ThickSweater();
     SteelToedBoots feet = new SteelToedBoots();
     KevlarPants legs = new KevlarPants();
     ThickBeanie head = new ThickBeanie();
+    Sunglasses eyes = new Sunglasses();
 
     Staff blunt = new Staff();
     player.setPrimaryWeapon( blunt );
     DeulDaggers bladed = new DeulDaggers();
     CopperCoin currency = new CopperCoin();
     PotionOfSight potions = new PotionOfSight();
+    HealingPotion potion = new HealingPotion();
     Earplugs misc = new Earplugs();
     Backpack bp = new Backpack();
     
@@ -129,11 +153,14 @@ public class Main {
     player.setArmor(Player.ARMOR_SLOT_FEET, feet);
     player.setArmor(Player.ARMOR_SLOT_LEG, legs);
     player.setArmor(Player.ARMOR_SLOT_HEAD, head);
+    player.setArmor(Player.ARMOR_SLOT_EYE, eyes);
     
     player.getStorage().addItemToContainer( currency );
     player.getStorage().addItemToContainer( bladed );
     player.getStorage().addItemToContainer( potions );
-    player.getStorage().addItemToContainer( misc );
+    player.getStorage().addItemToContainer( potion);
+    player.getMisc().addItemToContainer(misc); 
+
 
     console.outputPlayer(player);
   }
@@ -147,33 +174,123 @@ public class Main {
     HealingPotion potion = new HealingPotion();
     GoldCoin currency = new GoldCoin();
     // instantiate some armor!
+
+    Backpack bp = new Backpack(); 
+    bp.addItemToContainer(currency);
+    
     SteelChestPlate chestPlate = new SteelChestPlate();
     SteelBoots Boots = new SteelBoots();
     SteelHelmet Helmet = new SteelHelmet();
     SteelLeggings Leggings= new SteelLeggings();
-    Backpack bp = new Backpack();
+    SteelGlasses Eyes = new SteelGlasses();
+    
     player.setStorage(bp);
     player.setArmor(Player.ARMOR_SLOT_CHEST, chestPlate);
     player.setArmor(Player.ARMOR_SLOT_FEET, Boots);
     player.setArmor(Player.ARMOR_SLOT_HEAD, Helmet);
     player.setArmor(Player.ARMOR_SLOT_LEG, Leggings);
+    player.setArmor(Player.ARMOR_SLOT_EYE, Eyes);
 
     bp.addItemToContainer(potion);
-    bp.addItemToContainer(currency);
     bp.addItemToContainer(sword);
 
 
     console.outputPlayer(player);
   }
 
-  private static void runShivsTest(PlayerConsole console){
-    Player player = new Player ( "The Great One", 62, 900 );
+  private static Player loadShiv(PlayerConsole console){
+    Player player = new Player ( "The Great One",7000, 900 );
+    
     Molotov motlov = new Molotov();
+    WarHammer hammer = new WarHammer();
+    SteelBoots Boots = new SteelBoots();
+    SteelHelmet Helmet = new SteelHelmet();
+    SteelChestPlate chestPlate = new SteelChestPlate();
+    SteelLeggings Leggings= new SteelLeggings();
+    SteelGlasses Glasses = new SteelGlasses();
+    Backpack bp = new Backpack();
+    player.setStorage(bp);
 
+    player.setArmor(Player.ARMOR_SLOT_CHEST, chestPlate);
+    player.setArmor(Player.ARMOR_SLOT_FEET, Boots);
+    player.setArmor(Player.ARMOR_SLOT_HEAD, Helmet);
+    player.setArmor(Player.ARMOR_SLOT_LEG, Leggings);
+    ShortAxe axe = new ShortAxe();
     console.outputPlayer( player );
+
+    player.setPrimaryWeapon(hammer);
+
+    return player;
   }
 
-  private static void runJasonsTest( PlayerConsole console ){
+  private static Integer getCombatAction(String action){
+
+    try{
+      Integer combatAction = Integer.parseInt(action);
+
+      return combatAction;
+    }
+    catch ( NumberFormatException e ){
+      // throwing this away
+    }
+
+    return 0;
+  }
+
+  private static void runCombat( PlayerConsole console ){
+
+    List<Creature> opponents = new ArrayList<Creature>();
+    Player player = loadJohnny(console);
+
+    //Ogre ogre = new Ogre();
+    Demon demon = new Demon();
+    opponents.add( demon );
+
+    console.outputCreature(demon);
+
+    boolean inCombat = true;
+
+    Combat combat = new Combat( console, player, opponents );
+    String action = "";
+
+    while ( inCombat ){
+    
+      console.outputMessage(" "+Combat.ACTION_MELEE + ") Primary Attack   " + Combat.ACTION_FLEE + ") Flee    " +
+                          Combat.ACTION_SECONDARY + ") Secondary Attack    " + Combat.ACTION_CONSUMABLE + ") Use Consumable");
+    
+      action = getPlayerCombatAction(console);
+      
+      if ( action != null ){
+
+        int combatAction = getCombatAction(action);
+        int state = combat.executeAction(combatAction, 0);
+
+        if ( state == Combat.STATE_DEAD ){
+          console.outputMessage("Your character has died.  So sad!!!");
+          System.exit(0);
+        }
+        else if ( state == Combat.STATE_FLED ){
+          console.outputMessage("You have successfully fled the combat!");
+          inCombat = false;
+        }
+        else if ( state == Combat.STATE_ALIVE ){
+          if ( combat.getOpponentCount() == 0 ){
+            inCombat = false;
+            console.outputMessage("You have successfully defeated your opponents!");
+          }
+        }
+      }
+    }
+  }
+
+  private static String getPlayerCombatAction( PlayerConsole console ){
+
+    String value = console.getInput();
+
+    return value;
+  }
+
+  private static Player loadCharacter(){
     Player player = new Player("Jason the Fighter", 10, 8 );
 
     // instantiate some armor!
@@ -192,7 +309,7 @@ public class Main {
     player.getStorage().addItemToContainer( potion );
     player.getStorage().addItemToContainer( molotov );
 
-    console.outputPlayer( player );
+    return player;
   }
 }
 
