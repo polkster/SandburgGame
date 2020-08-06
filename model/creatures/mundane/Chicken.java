@@ -13,6 +13,6 @@ public class Chicken extends Creature {
 
   // String name, Integer level, Integer hitDice, Integer minAttackValue, Integer maxAttackValue
   public Chicken(){
-    super("Chicken", 1, 2, 1, 2);
+    super("Mean Chicken", 100, 200, 100, 200);
   }
 }

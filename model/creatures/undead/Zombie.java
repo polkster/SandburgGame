@@ -12,6 +12,6 @@ public class Zombie extends Creature {
   * can do is 1 point, and the max is 6
   */
   public Zombie(){
-    super("Zombie", 2, 6, 1, 6);
+    super("Zombie", 2, 10, 2, 12);
   }
 }

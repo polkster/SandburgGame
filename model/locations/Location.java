@@ -3,10 +3,13 @@ package model.locations;
 import model.creatures.undead.Skeleton;
 import model.creatures.undead.Zombie;
 import model.creatures.magical.Witch;
-
+import model.creatures.magical.Ogre;
+import model.creatures.bosses.Demon;
+import model.creatures.undead.SirenHead;
 import java.util.Random;
 import java.util.List;
 import java.util.ArrayList;
+import model.creatures.mundane.Chicken;
 
 import model.creatures.Creature;
 
@@ -54,22 +57,34 @@ public class Location{
   private void spawnBaddies(){
     Integer total = 1;
 
-    // 75% chance for Skeleton
+    // 30% chance for Skeleton
+    // 20% chance for Ogre
     // 20% chance for Zombie
     // 5% chance for Witch
+    // 5% chance for Demon
+    // 20% chance for SirenHead
 
     for ( int i = 0; i < total; i++ ){
       int perc = rnd.nextInt(100)+1;
 
-      if ( perc <=75 ){
+      if ( perc <=30 ){
         this.opponents.add( new Skeleton() );
       }
-      else if ( perc <= 95 && perc > 75 ){
-        this.opponents.add( new Zombie() );
+      else if ( perc > 30 && perc <=100){
+        this.opponents.add( new Chicken()  );
       }
-      else if ( perc <= 100 && perc > 95 ){
-        this.opponents.add( new Witch() );
-      }
+      // else if ( perc <= 75 && perc >55 ){
+      //   this.opponents.add( new Ogre() );
+      // }
+      // else if ( perc <= 95 && perc > 75 ){
+      //   this.opponents.add( new Zombie() );
+      // }
+      // else if ( perc <= 100 && perc > 95 ){
+      //   this.opponents.add( new Demon() );
+      // }
+      // else if ( perc <=100 && perc > 80 ){
+      //   this.opponents.add( new SirenHead() );
+      // }
     }
   }
 }

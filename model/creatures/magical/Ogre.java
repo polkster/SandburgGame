@@ -14,6 +14,6 @@ public class Ogre extends Creature {
 
   // String name, Integer level, Integer hitDice, Integer minAttackValue, Integer maxAttackValue
   public Ogre(){
-    super("Ogre", 6,8,1,6);    
+    super("Shrek", 6,8,1,6);    
   }
 }

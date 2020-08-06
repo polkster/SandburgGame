@@ -14,6 +14,6 @@ public class Skeleton extends Creature {
 
   // String name, Integer level, Integer hitDice, Integer minAttackValue, Integer maxAttackValue
   public Skeleton(){
-    super("Skeleton", 1, 6, 1, 4);
+    super("Skeleton (he doesn't tell anybody but he is scared of chickens)", 1, 10, 1, 6);
   }
 }

@@ -29,6 +29,7 @@ import model.containers.Wagons.OxDrawnWagon;
 import model.containers.Container;
 import model.containers.small.Pockets;
 import model.items.consumables.oneuseweapons.ToasterFullOBoom;
+import model.items.weapons.bladed.Dieplz;
 
 
 // armor imports
@@ -75,7 +76,7 @@ public class Main {
       Location location = world[playerX][playerY];
 
       console.outputMessage(location.getDescription());
-      console.outputMessage("There are " + location.getOpponents().size() + " creatures in this room" );
+      console.outputMessage("There are " + location.getOpponents().size() + " turds in this room" );
       
       showEscapeHatch(location, console);
       showOptionMenu(location, player, console);
@@ -103,7 +104,7 @@ public class Main {
     String options = fetchMovementOptions();
 
     if ( location.isEscapeHatch() ){
-      options += "U) ESCAPE!";
+      options += "U) plz don't leave me!";
     }
 
     console.outputMessage(options);
@@ -124,8 +125,8 @@ public class Main {
         playerX++;
       }
       else if ( input.equals("U") ){
-        console.outputMessage("You have successfully escaped the dungeon!");
-        console.outputMessage("GAME OVER!  You WIN!");
+        console.outputMessage("You have saddly escaped the dungeon!");
+        console.outputMessage("GAME OVER!  You r bad!");
         System.exit(0);
       }
     }
@@ -137,19 +138,19 @@ public class Main {
     String options = "";
 
     if ( playerY > 0 ){
-      options = "N) North ";
+      options = "N) North    ";
     }
 
     if ( playerX < world.length-1 ){
-      options += "E) East ";
+      options += "E) East    ";
     }
 
     if ( playerX > 0 ){
-      options += "W) West ";
+      options += "W) West    ";
     }
 
     if ( playerY < world.length-1 ){
-      options += "S) South ";
+      options += "S) South    ";
     }
 
     return options;
@@ -210,7 +211,7 @@ public class Main {
   }
 
   private static Player loadJohnny(PlayerConsole console){
-    Player player = new Player("Bob the face flop",10,5);
+    Player player = new Player("Bob the face flop",10000,500);
 
     Broadsword bladed = new Broadsword();
     player.setPrimaryWeapon( bladed );
@@ -219,6 +220,7 @@ public class Main {
     TheGodHelm Mewin = new TheGodHelm();
     Crocs Melose = new Crocs();
     ToasterFullOBoom BOOM = new ToasterFullOBoom();
+    Dieplz DIE = new Dieplz();
 
     OxDrawnWagon wn = new OxDrawnWagon();
 
@@ -230,7 +232,7 @@ public class Main {
     player.getStorage().addItemToContainer( currency );
     player.getStorage().addItemToContainer( moola );
     player.getMisc().addItemToContainer( BOOM );
-    player.setPrimaryWeapon( bladed );
+    player.setPrimaryWeapon( DIE );
 
     console.outputPlayer(player); 
 
@@ -273,11 +275,11 @@ public class Main {
     console.outputPlayer(player);
   }
 
-  private static void runNavinTest( PlayerConsole console ){
+  private static Player loadNavin( PlayerConsole console ){
     Player player = new Player("Navin", 9, 9);
     
-    ShortSword sword = new ShortSword();
-    player.setPrimaryWeapon(sword);
+    WarHammer hammer = new WarHammer();
+    player.setPrimaryWeapon(hammer);
     
     HealingPotion potion = new HealingPotion();
     GoldCoin currency = new GoldCoin();
@@ -300,10 +302,9 @@ public class Main {
     player.setArmor(Player.ARMOR_SLOT_EYE, Eyes);
 
     bp.addItemToContainer(potion);
-    bp.addItemToContainer(sword);
+    bp.addItemToContainer(hammer);
 
-
-    console.outputPlayer(player);
+    return player;
   }
 
   private static Player loadShiv(PlayerConsole console){
