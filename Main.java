@@ -101,6 +101,11 @@ public class Main {
   private static void processMovement( Location location, PlayerConsole console ){
     
     String options = fetchMovementOptions();
+
+    if ( location.isEscapeHatch() ){
+      options += "U) ESCAPE!";
+    }
+
     console.outputMessage(options);
 
     String input = console.getInput().toUpperCase();
@@ -117,6 +122,11 @@ public class Main {
       }
       else if ( input.equals("E") ){
         playerX++;
+      }
+      else if ( input.equals("U") ){
+        console.outputMessage("You have successfully escaped the dungeon!");
+        console.outputMessage("GAME OVER!  You WIN!");
+        System.exit(0);
       }
     }
 
@@ -139,7 +149,7 @@ public class Main {
     }
 
     if ( playerY < world.length-1 ){
-      options += "S) South";
+      options += "S) South ";
     }
 
     return options;
