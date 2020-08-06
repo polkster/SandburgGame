@@ -1,4 +1,4 @@
-package model.creatures.mundane;
+package model.creatures.specialmundane;
 
 import model.creatures.Creature;
 

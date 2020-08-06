@@ -36,6 +36,19 @@ public class Combat {
     this.player = player;
     this.opponents = opponents;
     this.console = console;
+
+    outputCombatInfo();
+  }
+
+  public List<Creature> getOpponents(){
+    return this.opponents;
+  }
+
+  private void outputCombatInfo(){
+
+    for ( int i = 0; i < opponents.size(); i++ ){
+      this.console.outputCreature(opponents.get(i));
+    }
   }
 
   public Player getPlayer(){
