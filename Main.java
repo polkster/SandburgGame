@@ -67,7 +67,7 @@ public class Main {
 
     boolean alive = true;
     PlayerConsole console = new PlayerConsole(System.out, System.in);
-    Player player = loadJohnny(console);
+    Player player = loadWaleed(console);
 
     createWorld();
     spawnPlayer();
@@ -76,7 +76,7 @@ public class Main {
       Location location = world[playerX][playerY];
 
       console.outputMessage(location.getDescription());
-      console.outputMessage("There are " + location.getOpponents().size() + " turds in this room" );
+      console.outputMessage("There are " + location.getOpponents().size() + " creatures in this room" );
       
       showEscapeHatch(location, console);
       showOptionMenu(location, player, console);
@@ -104,7 +104,7 @@ public class Main {
     String options = fetchMovementOptions();
 
     if ( location.isEscapeHatch() ){
-      options += "U) plz don't leave me!";
+      options += "U) escape!";
     }
 
     console.outputMessage(options);
@@ -125,8 +125,8 @@ public class Main {
         playerX++;
       }
       else if ( input.equals("U") ){
-        console.outputMessage("You have saddly escaped the dungeon!");
-        console.outputMessage("GAME OVER!  You r bad!");
+        console.outputMessage("You have escaped the dungeon!");
+        console.outputMessage("GAME OVER!  You finished the game!");
         System.exit(0);
       }
     }
@@ -178,10 +178,25 @@ public class Main {
     world[x][y].setEscapeHatch(true); // this is the place they have to find to escape!
   }
 
-  private static void runWaleedsTest( PlayerConsole console ){
+  private static Player loadWaleed( PlayerConsole console ){
     Player player = new Player( "Waleed", 10, 8 );
 
+    DeulDaggers daggers = new DeulDaggers();
+    player.setPrimaryWeapon( daggers );
+
+    SteelChestPlate chest = new SteelChestPlate();
+    SteelToedBoots boots = new SteelToedBoots();
+    SteelHelmet helmet = new SteelHelmet();
+    SteelLeggings leggings = new SteelLeggings();
+
+    player.setArmor( Player.ARMOR_SLOT_CHEST, chest );
+    player.setArmor( Player.ARMOR_SLOT_FEET, boots );
+    player.setArmor( Player.ARMOR_SLOT_HEAD, helmet );
+    player.setArmor( Player.ARMOR_SLOT_LEG, leggings );
+
     console.outputPlayer(player);
+
+    return player;
   }
 
   private static void runJakubtest( PlayerConsole console ){
@@ -193,10 +208,18 @@ public class Main {
     console.outputPlayer(player);
   }
 
-  private static void runBreannaTest(PlayerConsole console){
+  private static Player loadBreanna(PlayerConsole console){
     Player player = new Player( "Breanna", 7, 8 );
 
+    WarHammer hammer = new WarHammer();
+    player.setPrimaryWeapon( hammer );
+
+    KevlarVest vest = new KevlarVest();
+    player.setArmor( Player.ARMOR_SLOT_CHEST, vest );
+
     console.outputPlayer(player);
+
+    return player;
   }
 
   private static Player loadSydney(PlayerConsole console){
@@ -303,6 +326,8 @@ public class Main {
 
     bp.addItemToContainer(potion);
     bp.addItemToContainer(hammer);
+
+    console.outputPlayer( player );
 
     return player;
   }

@@ -70,15 +70,15 @@ public class Location{
       if ( perc <=30 ){
         this.opponents.add( new Skeleton() );
       }
-      else if ( perc > 30 && perc <=100){
-        this.opponents.add( new Chicken()  );
+      // else if ( perc > 30 && perc <=100){
+      //   this.opponents.add( new Chicken()  );
+      // }
+      else if ( perc >= 91 && perc < 100 ){
+        this.opponents.add( new Ogre() );
       }
-      // else if ( perc <= 75 && perc >55 ){
-      //   this.opponents.add( new Ogre() );
-      // }
-      // else if ( perc <= 95 && perc > 75 ){
-      //   this.opponents.add( new Zombie() );
-      // }
+      else if ( perc >= 31  && perc < 90 ){
+        this.opponents.add( new Zombie() );
+      }
       // else if ( perc <= 100 && perc > 95 ){
       //   this.opponents.add( new Demon() );
       // }

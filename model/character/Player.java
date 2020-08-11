@@ -79,7 +79,7 @@ public class Player extends Creature {
       return this.eye;
     }
     else{
-      System.out.println("TRIED TO EQUIP ARMOR IN THE WRONG SLOT!");
+      System.out.println("YOU TRIED!");
     }
 
     return null;

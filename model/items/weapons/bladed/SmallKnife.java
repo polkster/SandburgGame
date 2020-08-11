@@ -5,7 +5,7 @@ import model.items.weapons.Weapon;
 public class SmallKnife extends Weapon {
 
   public SmallKnife(){
-    super( "Small Knife", Weapon.SIZE_XL, 1, 3 );
+    super( "Small Knife", Weapon.SIZE_SMALL, 1, 3 );
 
     setAllowsBlock( false );
   }

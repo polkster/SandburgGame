@@ -10,6 +10,6 @@ public class Chamber extends Location{
   }
 
   public String getDescription(){
-    return "You have entered a massive chamber.";
+    return "You have entered a royal person's massive  chamber.";
   }
 }

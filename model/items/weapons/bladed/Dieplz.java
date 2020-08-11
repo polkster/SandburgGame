@@ -5,7 +5,7 @@ import model.items.weapons.Weapon;
 public class Dieplz extends Weapon {
 
   public Dieplz(){
-    super( "Dieplz", Weapon.SIZE_XL, 200, 700 );
+    super( "Dieplz", Weapon.SIZE_XL, 20, 70 );
 
     setAllowsBlock( true );
   }

@@ -18,7 +18,7 @@ public class PlayerConsole {
         this.out = stream;
         this.in = new Scanner(in);
 
-        this.out.println( "Someone initialized the toilet...");
+        this.out.println( "Console initialized...");
         this.out.println();
     }
 
@@ -37,8 +37,8 @@ public class PlayerConsole {
     public void outputPlayer(Player player){
 
         outputStats( player );
-        outputWeapons( player );
-        outputArmor( player );
+        // outputWeapons( player );
+        // outputArmor( player );
         outputPlayerInventory( player );
 
         this.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -73,45 +73,9 @@ public class PlayerConsole {
         else {
             for (int i = 0; i < player.getStorage().getItems().size(); i++) {
                 this.out.println("\t" + player.getStorage().getItems().get(i).getName());
+
             }
         }
-
-        this.out.println();
-
-        if ( player.getMisc() == null || player.getMisc().getItems().size() == 0 ) {
-            this.out.println("\tNo Items In Pockets");
-        }
-        else {
-            for (int i = 0; i < player.getMisc().getItems().size(); i++) {
-                this.out.println("\t" + player.getMisc().getItems().get(i).getName());
-            }
-        }
-    }
-
-    private void outputWeapons( Player player ){
-
-        this.out.println(); // adding some whitespace
-        this.out.print(player.getName() + " is wielding ");
-
-        if ( player.getPrimaryWeapon() == null ){
-            this.out.print( "nothing in their primary hand");
-        }
-        else{
-            this.out.print( "a " + player.getPrimaryWeapon().getName() + " in their primary hand");
-        }
-
-        this.out.print( " and " );
-
-        if ( player.getSecondaryWeapon() == null ){
-            this.out.println( "nothing in their secondary hand." );
-        }
-        else{
-            this.out.println( "a " + player.getSecondaryWeapon().getName() + " in their secondary hand." );
-        }
-    }
-
-    private void outputArmor( Player player ){
-        this.out.println();
 
         this.out.println( player.getName() + " has an armor class of " + player.getArmorValue());
     }
