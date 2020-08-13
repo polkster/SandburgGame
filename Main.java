@@ -58,6 +58,10 @@ import model.creatures.bosses.Demon;
 public class Main {
 
   private static Location [][] world = null;
+  
+  private static Location [][] level1 = null;
+  private static Location [][] level2 = null;
+
   private static Random random = new Random();
 
   private static int playerX = 0;
@@ -125,9 +129,21 @@ public class Main {
         playerX++;
       }
       else if ( input.equals("U") ){
-        console.outputMessage("You have escaped the dungeon!");
-        console.outputMessage("GAME OVER!  You finished the game!");
-        System.exit(0);
+
+        if ( world == level1 ){
+            console.outputMessage("You thought you were leaving but you can't!");
+            console.outputMessage("You have entered what appears to be a whole new complex and the hatch beneath you closed!");
+
+            playerX = 0;
+            playerY = 0;
+
+            world = level2;
+        }
+        else{
+          console.outputMessage("You have escaped the dungeon!");
+          console.outputMessage("GAME OVER!  You finished the game!");
+          System.exit(0);
+        }
       }
     }
 
@@ -167,13 +183,16 @@ public class Main {
   private static void createWorld(){
 
     int worldSize = 5;
-    world = WorldGenerator.generateWorld(worldSize,worldSize);
+    level1 = WorldGenerator.generateWorld(worldSize,worldSize,1);
+    level2 = WorldGenerator.generateWorld(worldSize,worldSize,2);
 
     int x = random.nextInt(worldSize);
     int y = random.nextInt(worldSize);
 
     playerX = random.nextInt(worldSize);
     playerY = random.nextInt(worldSize);
+
+    world = level1;
 
     world[x][y].setEscapeHatch(true); // this is the place they have to find to escape!
   }

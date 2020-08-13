@@ -54,7 +54,11 @@ public class Location{
     this.escapeHatch = value;
   }
 
-  private void spawnBaddies(){
+  protected void addOpponent( Creature creature ){
+    this.opponents.add( creature );
+  }
+
+  protected void spawnBaddies(){
     Integer total = 1;
 
     // 30% chance for Skeleton

@@ -14,6 +14,6 @@ public class Goblin extends Creature {
 
   // String name, Integer level, Integer hitDice, Integer minAttackValue, Integer maxAttackValue
   public Goblin(){
-    super("Goblin", 5,1,4,3);    
+    super("Goblin", 5,10,4,10);    
   }
 }
