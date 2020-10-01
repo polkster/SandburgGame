@@ -2,7 +2,7 @@
 package model.locations.types;
 
 import model.locations.Location;
-import model.creatures.specialmundane.King;
+import model.creatures.specialmundane.LichKing;
 import java.util.Random;
 
 public class ThroneRoom extends Location{
@@ -18,6 +18,6 @@ public class ThroneRoom extends Location{
   @Override
   protected void spawnBaddies(){
 
-    addOpponent( new King() );
+    addOpponent( new LichKing() );
   }
 }

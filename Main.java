@@ -11,6 +11,7 @@ import model.character.Player;
 import model.items.consumables.potions.HealingPotion;
 import model.items.weapons.other.Molotov;
 import model.locations.Location;
+import model.items.weapons.blunt.GoldenHammer;
 import model.items.weapons.axe.ShortAxe;
 import model.items.weapons.bladed.Broadsword;
 import model.items.weapons.bladed.ShortSword;
@@ -30,6 +31,7 @@ import model.containers.Container;
 import model.containers.small.Pockets;
 import model.items.consumables.oneuseweapons.ToasterFullOBoom;
 import model.items.weapons.bladed.Dieplz;
+import model.items.weapons.blunt.SledgeHammer;
 
 
 // armor imports
@@ -200,8 +202,8 @@ public class Main {
   private static Player loadWaleed( PlayerConsole console ){
     Player player = new Player( "Waleed", 10, 8 );
 
-    DeulDaggers daggers = new DeulDaggers();
-    player.setPrimaryWeapon( daggers );
+    SledgeHammer hammer = new SledgeHammer();
+    player.setPrimaryWeapon( hammer );
 
     SteelChestPlate chest = new SteelChestPlate();
     SteelToedBoots boots = new SteelToedBoots();
@@ -213,6 +215,11 @@ public class Main {
     player.setArmor( Player.ARMOR_SLOT_HEAD, helmet );
     player.setArmor( Player.ARMOR_SLOT_LEG, leggings );
 
+    player.getMisc().addItemToContainer( new HealingPotion() );
+    player.getMisc().addItemToContainer( new ToasterFullOBoom() );
+    player.getMisc().addItemToContainer( new ToasterFullOBoom() );
+    player.getMisc().addItemToContainer( new ToasterFullOBoom() );
+    
     console.outputPlayer(player);
 
     return player;
@@ -320,7 +327,7 @@ public class Main {
   private static Player loadNavin( PlayerConsole console ){
     Player player = new Player("Navin", 9, 9);
     
-    WarHammer hammer = new WarHammer();
+    GoldenHammer hammer = new GoldenHammer();
     player.setPrimaryWeapon(hammer);
     
     HealingPotion potion = new HealingPotion();

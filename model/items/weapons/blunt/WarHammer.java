@@ -5,6 +5,6 @@ import model.items.weapons.Weapon;
 public class WarHammer extends Weapon {
 
   public WarHammer(){
-    super( "War Hammer", Weapon.SIZE_XL, 20, 40 );
+    super( "War Hammer", Weapon.SIZE_XL, 10,13 );
   } 
 }
