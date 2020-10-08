@@ -4,9 +4,21 @@ import java.util.Random;
 
 public class Creature {
 
+  // determines if a player can escape from this mob
   private boolean allowsEscape;
 
-  private boolean Earplugs;
+  //determines if a player is turned to stone (aka petrified)
+  private boolean turnedToStone;
+
+  // determines if this creature has a special attack of some sort
+  private boolean special;
+
+  // determines if the creature "wanders" through the dungeon or level
+  private boolean wanderer;
+
+  // this is a variable that gets set and then unset during every combat
+  // -1 indicates that the initiative roll has not been made for the action
+  private Integer initiative  = -1; 
 
   // parameters
   private String name;
@@ -17,6 +29,7 @@ public class Creature {
   
   // calculated values
   private Integer hitPoints = 0;
+  private Integer currentHitPoints = 0;
   
   /*
   * @param 	name			The name of the creature (can be non unique)
@@ -32,6 +45,8 @@ public class Creature {
     this.minAttackValue = minAttackValue;
     this.maxAttackValue = maxAttackValue;
     this.allowsEscape = true;
+    this.special = false;
+    this.wanderer = false;
     
     // this will determine the creatures hit points upon instantiation
     calculateHitPoints();
@@ -53,6 +68,7 @@ public class Creature {
       
       // this is the abbreviation of this.hitPoints = this.hitPoints + val;
       this.hitPoints += val;
+      this.currentHitPoints = this.hitPoints;
     }
   }
   
@@ -81,11 +97,15 @@ public class Creature {
   }
   
   public Integer getCurrentHitPoints(){
-    return this.hitPoints;
+    return this.currentHitPoints;
   }
   
+  public Integer getMaxHitPoints(){
+    return this.hitPoints;
+  }
+
   public void setCurrentHitpoints( Integer hitPoints ){
-    this.hitPoints = hitPoints;
+    this.currentHitPoints = hitPoints;
   }
   
   public Integer getMinimumAttackValue(){
@@ -111,4 +131,37 @@ public class Creature {
   public void setAllowsEscape( boolean allowsEscape ){
     this.allowsEscape = allowsEscape;
   }
+
+  public boolean turnedToStone(){
+    return this.turnedToStone;
+  }
+
+  public void setTurnedToStone( boolean turnedToStone){
+    this.turnedToStone = turnedToStone;
+  }
+
+  public boolean isSpecial(){
+    return this.special;
+  }
+
+  public void setSpecial(boolean special){
+    this.special = special;
+  }
+
+  public Integer getInitiative(){
+    return this.initiative;
+  }
+
+  public void setInitiative( Integer value ){
+    this.initiative = value;
+  }
+  
+  public void setWanderer( boolean wanderer ){
+    this.wanderer = wanderer;
+  }
+
+  public boolean isWanderer(){
+    return this.wanderer;
+  }
 }
+

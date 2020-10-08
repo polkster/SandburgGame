@@ -19,6 +19,14 @@ public class Container {
     this.items = new ArrayList<Item>();
   }
 
+  public Integer getSlots(){
+    return this.slots;
+  }
+
+  public List<Item> getItems(){
+    return this.items;
+  }
+
   public boolean addItemToContainer( Item item ){
     
     if ( this.slotsInUse + item.getSize() > this.slots ){
